@@ -1,0 +1,11 @@
+spring:
+  datasource:
+    driver-class-name: com.mysql.jdbc.Driver
+    username: root
+    password: nideta1123
+    url: jdbc:mysql:///blog
+
+mybatis:
+  type-aliases-package: com.itzijin.domain
+  configuration:
+    map-underscore-to-camel-case: true

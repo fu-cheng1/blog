@@ -1,0 +1,1163 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@3.3.7/dist/css/bootstrap.min.css" rel="stylesheet">
+    <title>子衿博客</title>
+    <link rel="stylesheet" href="content/templates/FLY/css/style.php-v=6.0.1.css" type='text/css'
+          media='screen'/>
+
+    <link rel="stylesheet" href="Editor/css/editormd.css" />
+    <link rel="stylesheet" href="Editor/css/editormd.preview.min.css" />
+
+    <script src="js/jquery.min.js" type="text/javascript"></script>
+
+    <script src="content/templates/FLY/js/jquery.pjax.js-v=6.0.1" type="text/javascript"></script>
+    <script src="content/templates/FLY/js/bootstrap.min.js-v=6.0.1" type="text/javascript"></script>
+    <script src="content/templates/FLY/js/jquery.lazyload.js-v=6.0.1" type="text/javascript"></script>
+    <script src="content/templates/FLY/js/tinymce/tinymce.min.js-v=6.0.1" type="text/javascript"></script>
+    <script type="text/javascript" src="content/plugins/lanye_zclip/jquery.zclip.min.js"></script>
+
+    <style>.sidebar.fixed {
+        position: fixed;
+        left: 50%;
+        bottom: 0;
+        margin-left: 230px;
+    }
+
+    .sidebar.pins {
+        position: absolute;
+        left: 50%;
+        margin-left: 230px;
+        right: 386px
+    }
+
+    .navbar-default .navbar-nav > .active > a, .navbar-default .navbar-nav > .active > a:focus, .navbar-default .navbar-nav > .active > a:hover, .navbar-default .navbar-nav > .dropdown > a:focus, .navbar-default .navbar-nav > .dropdown > a:hover, .navbar-default .navbar-nav > li > a:hover, .navbar-default .navbar-nav > .open > a, .navbar-default .navbar-nav > .open > a:focus, .navbar-default .navbar-nav > .open > a:hover {
+        color: #45B6F7;
+        background-color: transparent
+    }
+
+    .btn-info {
+        background-color: #45B6F7;
+        border-color: #45B6F7
+    }
+
+    .btn-info:hover {
+        background-color: #45B6F7;
+        border-color: #45B6F7
+    }
+
+    #post-box .post-title, #post-box .post-title {
+        border-left: 5px solid #45B6F7
+    }
+
+    .panel_cms li a:hover, .posts-default-title h2 a:hover {
+        color: #45B6F7
+    }
+
+    .pagination ul > .active > span {
+        background: #45B6F7;
+        color: #fff
+    }
+
+    .related-posts > li .related-posts-panel:hover {
+        border-color: #45B6F7;
+        box-shadow: 0 0 2px #45B6F7;
+        -moz-box-shadow: 0 0 2px #45B6F7
+    }
+
+    .context img:hover {
+        border-color: #45B6F7;
+        box-shadow: 0 0 2px #45B6F7;
+        -moz-box-shadow: 0 0 2px #45B6F7
+    }
+
+    .context a {
+        border-bottom: 1px solid #45B6F7
+    }
+
+    .grid-weibo-show .u-btn-submit {
+        border: 1px solid #45B6F7;
+        background: #45B6F7
+    }
+
+    .link-li > a:hover, .sidebar-posts-list > li .side-title-r > a:hover, .sidebar-posts-list > li .side-title > a:hover, .sidebar-posts-list > li > a:hover, .author a:hover, .pagination > li > a, .pagination > li > span, .page-navi .current, .page-navi .pages, .page-navi a, .comments-list li .right-box > .comment-meta .edit-link a, .comments-list li .right-box > .comment-meta .reply a, .comments-list li .right-box > .waiting, .tw li:hover .tw-content, .page-tw a, ul.readers-list a:hover em, ul.readers-list a:hover strong, .posts-gallery-content h2 a:hover {
+        color: #45B6F7
+    }
+
+    .focusmo a:hover h4 {
+        background-color: #45B6F7;
+        opacity: .8
+    }
+
+    .backtop:hover {
+        background: #45B6F7;
+        border: 1px solid #45B6F7;
+        color: #fff
+    }
+
+    .comments-list-nav span, .tw li:hover .atitle:after {
+        background: #45B6F7
+    }
+
+    .page-navi .current, .page-navi a:hover {
+        background: #45B6F7;
+        border-color: #45B6F7;
+        color: #FFF
+    }
+
+    .page-tw span, .page-tw a:focus, .page-tw a:hover, ul.readers-list img:hover {
+        background-color: #45B6F7
+    }
+
+    ::-webkit-scrollbar-thumb {
+        background-color: #45B6F7
+    }
+
+    .logtop dl p .spbut:hover {
+        border: 1px solid #45B6F7;
+        background-color: #45B6F7
+    }
+    </style>
+</head>
+<body class="nav-fixed">
+<nav id="header" class="navbar navbar-default navbar-fixed-top">
+    <div class="container">
+        <div class="navbar-header">
+            <a href="index.html" class="navbar-brand logo"><img
+                    src="img/log.png" alt="个人分享 - Finally"></a>
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse"
+                    data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+                <span class="sr-only"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+        </div>
+        <div class="collapse navbar-collapse navbar-right" id="bs-example-navbar-collapse-1">
+            <ul class="nav navbar-nav nav-top">
+                <li class="">
+                    <a href="index.html">
+                        <i class='fa fa-home'></i> 首页
+                    </a>
+                </li>
+                <li class="dropdown">
+                    <a href="https://pjax.cn/sort/recommend" class="dropdown-toggle" data-toggle="dropdown">
+                        <i class='fa fa-twitch'></i> 精选推荐 <span class="fa fa-angle-down"></span>
+
+                    </a>
+                    <ul class="dropdown-menu">
+                        <li><a href="#"><i class="fa fa-plug"></i> 个人分享</a></li>
+                        <li><a href="#"><i class="fa fa-pencil-square-o"></i> 随心笔记</a></li>
+                        <li><a href="#"><i class="fa fa-wrench"></i> 常用工具</a></li>
+                        <li><a href="#"><i class="fa fa-windows"></i> 纯净系统</a></li>
+                        <li><a href="#"><i class="fa fa-globe"></i> 网络技巧</a></li>
+                        <li><a href="#"><i class="fa fa-code"></i> 建站教程</a></li>
+                        <li><a href="#"><i class="fa fa-play-circle"></i> 影视资源</a></li>
+                        <li><a href="#"><i class="fa fa-thumbs-o-up"></i> 网友投稿</a></li>
+                        <li><a href="#"><i class="fa fa-picture-o"></i> 搞笑时刻</a></li>
+                    </ul>
+                </li>
+                <li class="dropdown">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                        <i class='fa fa-language'></i> 模板插件 <span class="fa fa-angle-down"></span>
+
+                    </a>
+                    <ul class="dropdown-menu">
+                        <li><a href="#"><i class="fa fa-desktop"></i> emlog</a></li>
+                        <li><a href="#"><i class="fa fa-foursquare"></i> zblog</a></li>
+                        <li><a href="#"><i class="fa fa-wordpress"></i> wordpress</a></li>
+                    </ul>
+                </li>
+                <li class="dropdown">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                        <i class='fa fa-credit-card'></i> VIP专区 <span class="fa fa-angle-down"></span>
+
+                    </a>
+                    <ul class="dropdown-menu">
+                        <li><a href="#"><i class="fa fa-shopping-bag"></i> 模板专区</a></li>
+                        <li><a href="#"><i class="fa fa-retweet"></i> 插件专区</a></li>
+                    </ul>
+                </li>
+                <li class="">
+                    <a href="#">
+                        <i class='fa fa-gavel'></i> 骗子曝光
+                    </a>
+                </li>
+                <li class="dropdown">
+                    <a href="javascript:" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-flask"></i>
+                        更多功能 <span class="fa fa-angle-down"></span> </a>
+                    <ul class="dropdown-menu">
+                        <li><a href="#"><i class="fa fa-comment"></i> 留言吐槽</a></li>
+                        <li><a href="#"><i class="fa fa-picture-o"></i> 相册图库</a></li>
+                        <li><a href="#"><i class="fa fa-list"></i> 文章归档</a></li>
+                        <li><a href="#"><i class="fa fa-link"></i> 我的邻居</a></li>
+                        <li><a href="#"><i class="fa fa-wrench"></i> 站长工具</a></li>
+                        <li><a href="#" target="_blank"><i class="fa fa-cloud"></i> 个人网盘</a>
+                        </li>
+                        <li><a href="#"><i class="fa fa-id-card-o"></i> 关于饺子</a></li>
+                    </ul>
+                </li>
+            </ul>
+            <div class="fly-nav-right">
+                <div class="login-nav"><a href="#" class="expand" data-target="#myLogin" data-toggle="modal"
+                                          data-backdrop="static" target="_blank"><i class="fa fa-user-circle"></i></a>
+                </div>
+                <div class="logout-nav" style="display:none"><a href="#"><span
+                        class="login-avatars"></span></a>
+                    <div class="avatar-menu">
+                        <div class="dltips">
+                            <div class="dlli"><a href="https://pjax.cn/?user&datas"><i class="fa fa-user-circle-o"></i>
+                                修改资料</a></div>
+                            <div class="dlli lgset"></div>
+                            <div class="dlli logout"><a href="javascript:;" class="login_logout"><i
+                                    class="fa fa-sign-out"></i> 退出登录</a></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="fly-search fly-search-s"><i class="fa fa-search"></i></div>
+            </div>
+        </div>
+
+    </div>
+</nav>
+<div id="FLY">
+    <script>
+        (function () {
+            var bp = document.createElement('script');
+            var curProtocol = window.location.protocol.split(':')[0];
+            if (curProtocol === 'https') {
+                bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';
+            } else {
+                bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+            }
+            var s = document.getElementsByTagName("script")[0];
+            s.parentNode.insertBefore(bp, s);
+        })();
+    </script>
+    <section class="container">
+        <div class="content-wrap">
+            <div id="content" class="content">
+                <!-- 内容开始 -->
+                <article id="post-box">
+                    <div class="panel panel-sort">
+                        <header class="panel-header">
+                            <div class="post-meta-box">
+                                <!--面包屑导航开始-->
+                                <ol class="breadcrumb">
+                                    <li><a href="https://pjax.cn/">首页</a></li>
+                                    <li>
+                                        <a class="cat" href="https://pjax.cn/sort/contribute">网友投稿</a>
+                                    </li>
+                                    <li class="active">窗口文字复制神器</li>
+                                </ol>
+                                <!--面包屑导航结束-->
+                                <div class="meta-top">
+                                    <span class="date-top"><i class="fa fa-clock-o"></i> <time class="pubdate">2018年4月17日</time></span>
+                                    <span class="comments-top"><i class="fa fa-comments-o"></i> 8条评论</span>
+                                    <span class="close-sidebar" title="关闭侧边栏"><a href="javascript:;"><i
+                                            class="fa fa-toggle-off"></i></a></span>
+                                    <span class="show-sidebar" title="显示侧边栏" style="display:none;"><a
+                                            href="javascript:;"><i class="fa fa-toggle-on"></i></a></span>
+                                </div>
+                            </div>
+                            <h2 class="post-title"><span class="fa fa-code"></span><span v-text="article.title"></span></h2>
+                            <ul id="mobile-tab-menu" class="no-js-hide">
+                                <li class="current" data-tab="context">内容</li>
+                                <li class="" data-tab="related">相关</li>
+                            </ul>
+                        </header>
+                        <!--正文内容-->
+                        <section class="context">
+                            <div class="content editormd-preview-theme" id="content22">
+                                <textarea style="display:none;">
+{{article.content}}
+                                </textarea>
+                            </div>
+
+                        </section>
+                        <!--点赞分享-->
+                        <div class="share_list shareBox">
+
+                            <div class="socialBox">
+                                <div class="bdsharebuttonbox u-share-container f-usn">
+                                    <ul class="dsye">
+                                        <li class="s-weixin js-share-wx"
+                                            onclick="shareToWeiXin('https://fly.pjax.cn/api/qrcode/api.php?data=https://pjax.cn/post/432')"
+                                            title="分享到朋友圈"></li>
+                                        <li class="s-weibo js-share-wb"
+                                            onclick="shareToWeibo('https://pjax.cn/post/432','窗口文字复制神器','https://pjax.cn/post/432')"
+                                            title="分享到微博"></li>
+                                        <li class="s-qzone js-share-qz"
+                                            onclick="shareToQzone('https://pjax.cn/post/432','窗口文字复制神器','https://pjax.cn/post/432','')"
+                                            title="分享到QQ空间"></li>
+                                        <li class="s-note js-share-note"
+                                            onclick="shareToQQ('https://pjax.cn/post/432','窗口文字复制神器','https://pjax.cn/post/432')"
+                                            title="分享给QQ好友"></li>
+                                    </ul>
+                                </div>
+                                <div class="panel-reward">
+                                    <ul class="dsye">
+                                        <li class="alipay"><a href="https://pjax.cn/content/templates/FLY/img/alzf.png"
+                                                              target="_blank" class="highslide"><img alt="打赏"
+                                                                                                     src="https://pjax.cn/content/templates/FLY/img/alzf.png"></a><b>支付宝扫一扫</b>
+                                        </li>
+                                        <li class="weixinpay"><a
+                                                href="https://pjax.cn/content/templates/FLY/img/wxzf.png"
+                                                target="_blank" class="highslide"><img alt="打赏"
+                                                                                       src="https://pjax.cn/content/templates/FLY/img/wxzf.png"></a><b>微信扫一扫</b>
+                                        </li>
+                                        <li class="txpay"><a href="https://pjax.cn/content/templates/FLY/img/txzf.png"
+                                                             target="_blank" class="highslide"><img alt="打赏"
+                                                                                                    src="https://pjax.cn/content/templates/FLY/img/txzf.png"></a><b>企鹅扫一扫</b>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </article>
+                <!-- 内容结束 -->
+                <!-- 版权开始 -->
+                <div class="post-copyright panel panel-sort sbclass" data-aos="fade-up">
+                    <p class="sidetags"><i class="fa fa-tags"></i> 本文标签：</p>
+                    <p><i class="fa fa-bullhorn"></i> 版权声明：若无特殊注明，本文皆为《<a href="https://pjax.cn/author/1" title="管理员">Finally</a>》原创，转载请保留文章出处。
+                    </p>
+                    <p><i class="fa fa-share-alt-square"></i> 本文链接：窗口文字复制神器 - https://pjax.cn/post/432</p>
+                </div>
+                <!-- 版权结束 -->
+                <!-- 相关开始 -->
+                <div class="span12 related-posts-box mobile-hide" data-aos="fade-up">
+                    <div class="panel log_list panel-sort">
+                        <header class="panel-header">
+                            <h3 class="log_h3">
+                                <span class="fa fa-clipboard"></span> 相关文章
+                            </h3>
+                        </header>
+                        <ul class="related-posts row">
+                            <li class="col-sm-4">
+                                <div class="panel transparent related-posts-panel">
+                                    <a href="https://pjax.cn/post/390" class="thumbnail-link" rel="bookmark"
+                                       title="一款高端大气的Emlog后台登陆界面">
+                                        <img src="https://pjax.cn/content/uploadfile/201707/4dac1500324038.png"
+                                             class="thumbnailimg" width="175" height="80" title="一款高端大气的Emlog后台登陆界面"
+                                             alt="一款高端大气的Emlog后台登陆界面">
+                                        <div class="excerpt">
+                                            这款后台登陆界面板子是本屌花一个上午(也就半个小时)仿的一个WordPress后台,江南安全社区的后台登陆界面,我看着挺不错的,就特么给扒下来了。
+
+
+                                            现在分享出来咯~~~哈哈哈哈~~~不用谢~~~（不喜勿喷）
+
+
+                                            此文章由南柯一梦投稿！
+                                        </div>
+                                    </a>
+                                    <div class="bottom-box">
+                                        <h4 class="post-title"><a href="https://pjax.cn/post/390"
+                                                                  title="一款高端大气的Emlog后台登陆界面" rel="bookmark">一款高端大气的Emlog后台登陆界面</a>
+                                        </h4>
+                                        <ul class="post-meta">
+                                            <li class="author">
+                                                <span class="fa fa-github"></span>
+                                                <a href="https://pjax.cn/author/23" title="站内会员">598496508</a></li>
+                                            <li class="date date-abb">
+                                                <span class="fa fa-clock-o"></span>
+                                                <a href="https://pjax.cn/post/390" title="发布于2017-7-16">
+                                                    <time>2017-7-16</time>
+                                                </a>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </li>
+                            <li class="col-sm-4">
+                                <div class="panel transparent related-posts-panel">
+                                    <a href="https://pjax.cn/post/407" class="thumbnail-link" rel="bookmark"
+                                       title="EMLOG万能解析播放器插件">
+                                        <img src="https://pjax.cn/content/uploadfile/201707/7a011501496065.jpg"
+                                             class="thumbnailimg" width="175" height="80" title="EMLOG万能解析播放器插件"
+                                             alt="EMLOG万能解析播放器插件">
+                                        <div class="excerpt">
+
+
+                                            之前很早就想在自己博客上更新一些能在线播放的VIP电影了，奈何都是MP4的插件！
+
+
+                                            然后就做了那么一个小玩意，就当实践。如果接口失效请自行替换！
+
+
+                                            演示地址：http://xu311.com/ys/9.html
+
+
+                                            本插件由旭博客投稿！
+                                        </div>
+                                    </a>
+                                    <div class="bottom-box">
+                                        <h4 class="post-title"><a href="https://pjax.cn/post/407" title="EMLOG万能解析播放器插件"
+                                                                  rel="bookmark">EMLOG万能解析播放器插件</a></h4>
+                                        <ul class="post-meta">
+                                            <li class="author">
+                                                <span class="fa fa-github"></span>
+                                                <a href="https://pjax.cn/author/15" title="站内会员">2250635418</a></li>
+                                            <li class="date date-abb">
+                                                <span class="fa fa-clock-o"></span>
+                                                <a href="https://pjax.cn/post/407" title="发布于2017-7-31">
+                                                    <time>2017-7-31</time>
+                                                </a>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </li>
+                            <li class="col-sm-4">
+                                <div class="panel transparent related-posts-panel">
+                                    <a href="https://pjax.cn/post/391" class="thumbnail-link" rel="bookmark"
+                                       title="EMLOG终结X2版美化下载插件">
+                                        <img src="https://pjax.cn/content/uploadfile/201707/953d1500284872.jpg"
+                                             class="thumbnailimg" width="175" height="80" title="EMLOG终结X2版美化下载插件"
+                                             alt="EMLOG终结X2版美化下载插件">
+                                        <div class="excerpt">
+
+
+                                            这个插件是基于饺子的Fdown下载二开美化的一个版本，也是最后免费分享的版本！
+
+                                            这个插件呢，和传统的下载样式有点区别，差别在哪自行体会！比较适合教程网和下载资源站使用。
+
+                                            没有多余的功能和复杂的样式，比较花俏简单。其余也不多说了喜欢的可以下载!
+
+
+                                            饺子提示：本插件由旭博客美化，界面确实很好看，但是建议使用新插件的朋友暂时不要用这个，因为数据库字段不一样，会导致数据库报错
+
+
+                                        </div>
+                                    </a>
+                                    <div class="bottom-box">
+                                        <h4 class="post-title"><a href="https://pjax.cn/post/391"
+                                                                  title="EMLOG终结X2版美化下载插件" rel="bookmark">EMLOG终结X2版美化下载插件</a>
+                                        </h4>
+                                        <ul class="post-meta">
+                                            <li class="author">
+                                                <span class="fa fa-github"></span>
+                                                <a href="https://pjax.cn/author/15" title="站内会员">2250635418</a></li>
+                                            <li class="date date-abb">
+                                                <span class="fa fa-clock-o"></span>
+                                                <a href="https://pjax.cn/post/391" title="发布于2017-7-16">
+                                                    <time>2017-7-16</time>
+                                                </a>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <!-- 相关结束 -->
+                <!-- 评论开始 -->
+                <article class="span12" id="comments" data-aos="fade-up">
+                    <div id="comments2" class="panel-comments panel-sort">
+                        <div id="respond" class="comment-respond">
+                            <div id="comment-place">
+                                <div class="comment-post" id="comment-post">
+                                    <h3 id="reply-title" class="comment-reply-title"><span
+                                            class="fa fa-comments-o"></span> 发表评论
+                                        <div class="cancel-reply" id="cancel-reply" style="display:none"><a
+                                                href="javascript:void(0);" onclick="cancelReply()"><span
+                                                class="fa fa-share"></span> 取消回复</a></div>
+                                    </h3>
+                                    <form method="post" name="commentform"
+                                          action="https://pjax.cn/index.php?action=addcom" id="commentform">
+                                        <input type="hidden" name="gid" id="comment-gid" value="432"/>
+                                        <input type="hidden" name="pid" id="comment-pid" value="0"/>
+                                        <p class="comment-notes"><span id="email-notes">电子邮件地址不会被公开。</span> 必填项已用<span
+                                                class="required">*</span>标注</p>
+                                        <textarea id="comment" class="form-control comment-form-comment textarea"
+                                                  placeholder="来都来了,不随便说两句吗?" name="comment" tabindex="4" cols="45"
+                                                  rows="10"></textarea>
+                                        <input class="form-control comment-form-qq" placeholder="QQ" id="qqhao"
+                                               name="qq" maxlength="10" type="text" value="" tabindex="0" size="10">
+                                        <input class="form-control comment-form-author" placeholder="昵称" id="author"
+                                               name="comname" maxlength="20" type="text" value="" tabindex="1"
+                                               size="22">
+                                        <input class="form-control comment-form-email" placeholder="邮箱" id="email"
+                                               name="commail" maxlength="30" type="email" value="" tabindex="2"
+                                               size="22">
+                                        <input class="form-control comment-form-url" placeholder="网站" id="url"
+                                               name="comurl" maxlength="30" type="url" value="" tabindex="3" size="22">
+                                        <p class="form-submit">
+                                            <button type="submit" id="submit" class="btn btn-default" tabindex="6">
+                                                发表评论
+                                            </button>
+                                        </p>
+                                        <div class="comment-form-smiley no-js-hide" onclick="embedSmiley()">
+                                            <div class="opensmile" title="插入表情" class="button">
+                                                <span class="fa fa-smile-o" style="top:2px"></span></div>
+                                            <div class="smiley-box" style="display:none"><a
+                                                    href="javascript:grin('[F1]')" title="囧"><img
+                                                    src="https://pjax.cn/content/templates/FLY/img/face/1.gif" alt="囧"/></a>
+                                                <a href="javascript:grin('[F2]')" title="亲"><img
+                                                        src="https://pjax.cn/content/templates/FLY/img/face/2.gif"
+                                                        alt="亲"/></a>
+                                                <a href="javascript:grin('[F3]')" title="晕"><img
+                                                        src="https://pjax.cn/content/templates/FLY/img/face/3.gif"
+                                                        alt="晕"/></a>
+                                                <a href="javascript:grin('[F4]')" title="酷"><img
+                                                        src="https://pjax.cn/content/templates/FLY/img/face/4.gif"
+                                                        alt="酷"/></a>
+                                                <a href="javascript:grin('[F5]')" title="哭"><img
+                                                        src="https://pjax.cn/content/templates/FLY/img/face/5.gif"
+                                                        alt="哭"/></a>
+                                                <a href="javascript:grin('[F6]')" title="馋"><img
+                                                        src="https://pjax.cn/content/templates/FLY/img/face/6.gif"
+                                                        alt="馋"/></a>
+                                                <a href="javascript:grin('[F7]')" title="闭嘴"><img
+                                                        src="https://pjax.cn/content/templates/FLY/img/face/7.gif"
+                                                        alt="闭嘴"/></a>
+                                                <a href="javascript:grin('[F8]')" title="调皮"><img
+                                                        src="https://pjax.cn/content/templates/FLY/img/face/8.gif"
+                                                        alt="调皮"/></a>
+                                                <a href="javascript:grin('[F9]')" title="馋"><img
+                                                        src="https://pjax.cn/content/templates/FLY/img/face/9.gif"
+                                                        alt="馋"/></a>
+                                                <a href="javascript:grin('[F10]')" title="奸"><img
+                                                        src="https://pjax.cn/content/templates/FLY/img/face/10.gif"
+                                                        alt="奸"/></a>
+                                                <a href="javascript:grin('[F11]')" title="怒"><img
+                                                        src="https://pjax.cn/content/templates/FLY/img/face/11.gif"
+                                                        alt="怒"/></a>
+                                                <a href="javascript:grin('[F12]')" title="笑"><img
+                                                        src="https://pjax.cn/content/templates/FLY/img/face/12.gif"
+                                                        alt="笑"/></a>
+                                                <a href="javascript:grin('[F13]')" title="羞"><img
+                                                        src="https://pjax.cn/content/templates/FLY/img/face/13.gif"
+                                                        alt="羞"/></a>
+                                                <a href="javascript:grin('[F14]')" title="汗"><img
+                                                        src="https://pjax.cn/content/templates/FLY/img/face/14.gif"
+                                                        alt="汗"/></a>
+                                                <a href="javascript:grin('[F15]')" title="色"><img
+                                                        src="https://pjax.cn/content/templates/FLY/img/face/15.gif"
+                                                        alt="色"/></a>
+                                                <a href="javascript:grin('[F16]')" title="萌"><img
+                                                        src="https://pjax.cn/content/templates/FLY/img/face/16.gif"
+                                                        alt="萌"/></a>
+                                                <a href="javascript:grin('[F17]')" title="可怜"><img
+                                                        src="https://pjax.cn/content/templates/FLY/img/face/17.gif"
+                                                        alt="可怜"/></a>
+                                                <a href="javascript:grin('[F18]')" title="快哭了"><img
+                                                        src="https://pjax.cn/content/templates/FLY/img/face/18.gif"
+                                                        alt="快哭了"/></a>
+                                                <a href="javascript:grin('[F19]')" title="呆"><img
+                                                        src="https://pjax.cn/content/templates/FLY/img/face/19.gif"
+                                                        alt="呆"/></a>
+                                                <a href="javascript:grin('[F20]')" title="吓"><img
+                                                        src="https://pjax.cn/content/templates/FLY/img/face/20.gif"
+                                                        alt="吓"/></a>
+                                                <a href="javascript:grin('[F21]')" title="大笑"><img
+                                                        src="https://pjax.cn/content/templates/FLY/img/face/21.gif"
+                                                        alt="大笑"/></a>
+                                            </div>
+                                        </div>
+                                        <div title="打卡"
+                                             onclick="javascript:SIMPALED.Editor.daka();this.style.display='none'"
+                                             class="daka"><i class="fa fa-pencil"></i></div>
+                                        <div title="赞"
+                                             onclick="javascript:SIMPALED.Editor.zan();this.style.display='none'"
+                                             class="zan"><i class="fa fa-thumbs-o-up"></i></div>
+                                        <div title="踩"
+                                             onclick="javascript:SIMPALED.Editor.cai();this.style.display='none'"
+                                             class="cai"><i class="fa fa-thumbs-o-down"></i></div>
+                                        <div id="error"></div>
+                                        <div id="ajaxloading"></div>
+                                        <div id="error1"></div>
+                                        <div id="ajaxloading1"></div>
+                                        <div class="input-send"><input value="y" checked="checked" type="checkbox"
+                                                                       name="send"> 允许邮件通知
+                                        </div>
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+                        <a name="comments1"></a>
+                        <header class="panel-header">
+                            <h3 class="log_h3">
+                                <span class="fa fa-angellist"></span> 评论</h3>
+                            <span class="right"><span class="comments-number">8</span>条评论</span>
+                        </header>
+                        <ol class="comments-list show-avatars">
+                            <li class="comment even thread-odd thread-alt depth-1 show-avatars" id="comment-7588">
+                                <article id="comment-box-7588" class="comment-box">
+                                    <img srcset="https://q2.qlogo.cn/headimg_dl?dst_uin=123456&spec=100" alt="avatar"
+                                         class="avatar avatar-42 photo" height="42" width="42"/>
+                                    <div class="right-box">
+                                        <p class="comment-meta"><span class="comment_visitor author" title="游客"><a
+                                                href="https://pjax.cn/go.php?url=aHR0cDovL3VzZXIucXpvbmUucXEuY29tLzEyMzQ1Ng=="
+                                                target="_blank" class="url" rel="nofollow">腾讯视频</a>  <a class="vip6"
+                                                                                                        title="VIP等级：超凡大师 LV.6"><i
+                                                class="pro"></i><i class="level">Lv.6</i></a></span> <span
+                                                class="useragent"><img
+                                                src='https://pjax.cn/content/plugins/useragent/16/net/chrome.png'
+                                                alt='Chrome 63.0.3239.132' width='12' height='12' class='useragent'/>&nbsp;Chrome 63.0.3239.132&nbsp;<img
+                                                src='https://pjax.cn/content/plugins/useragent/16/os/win-2.png'
+                                                alt='Windows' width='12' height='12'
+                                                class='useragent'/>&nbsp;Windows</span> <span class="reply"><i
+                                                rel="nofollow" class="comment-reply-link" href="#comment-7588"
+                                                onclick="commentReply(7588,this)" aria-label="回复"><span
+                                                class="fa fa-reply-all"></span> 回复</i></span></p>
+                                        <p>
+                                        <blockquote>滴！学生卡！打卡时间：下午6:33:53，请上车的乘客系好安全带~</blockquote>
+                                        </p>
+                                        <p class="time"><span class="sign"><span
+                                                class='fa fa-desktop'></span> 中国 移动</span>
+                                            <time pubdate="pubdate"><span class="fa fa-clock-o"></span> 2个月前 (05-24)
+                                            </time>
+                                        </p>
+                                    </div>
+                                </article>
+                                <ol class="children"></ol>
+                            </li>
+                        </ol>
+                        <nav class="comments-list-nav page-navi">
+                            <span>1</span> <a href="https://pjax.cn/post/432/comment-page-2#comments">2</a></nav>
+
+                        <!-- #respond -->
+                    </div>
+                </article>
+                <!-- 评论结束 -->
+            </div>
+        </div>
+
+        <!--真个侧边栏-->
+        <aside class="sidebar">
+            <ul class="row">
+                <!--个人信息-->
+                <li class="widget widget_ui_blogger" data-aos="fade-up">
+                    <article class="panel-side">
+                        <div class="fly_weibo">
+                            <ul class="blogger_side">
+                                <div id="weiboShow">
+                                    <div class="grid-weibo-show shadow-hover">
+                                        <header id="shead">&nbsp;</header>
+                                        <div id="user-login" class="contentt">
+                                            <div class="avatar">
+                                                <img src="https://pjax.cn/content/uploadfile/topimg/15644250614191.png?param=80y80">
+                                                <i title="Finally" class="author-ident"></i>
+                                                <div class="overlay">
+                                                    <a href="#" class="expand" data-target="#myLogin"
+                                                       data-toggle="modal" data-backdrop="static"
+                                                       target="_blank">Login</a>
+                                                </div>
+                                                <span class="rank"></span>
+                                            </div>
+                                            <h4>Finally</h4>
+                                            <p class="seta">自古深情留不住，总是套路得人心！</p>
+                                            <div class="author-social"><span class="author-blog"> <a
+                                                    href="http://wpa.qq.com/msgrd?v=3&amp;uin=1501700017&amp;site=qq&amp;menu=yes"
+                                                    rel="nofollow" target="_blank"><i
+                                                    class="fa fa-qq"></i>客服</a> </span> <span class="author-weibo"> <a
+                                                    href="https://ka.pjax.cn" rel="nofollow" target="_blank"><i
+                                                    class="fa fa-thumbs-up"></i>店铺</a> </span></div>
+                                        </div>
+                                        <div id="user-div" class="contentt" style="display:none;">
+                                            <div class="avatar">
+                                                <span class="dlimg"></span>
+                                                <i class="dlname"></i>
+                                                <span class="rank"></span>
+                                            </div>
+                                            <div class="sidebar-user row">
+                                                <div class="dlcd"></div>
+                                                <div class="col-sm-6 sideli"><a href="https://pjax.cn/?user&home"><i
+                                                        class="fa fa-user-circle-o"></i> 用户中心</a></div>
+                                                <div class="col-sm-6 sideli"><a href="https://pjax.cn/?user&comments"><i
+                                                        class="fa fa-comments-o"></i> 评论管理</a></div>
+                                                <div class="col-sm-6 sideli dlset"></div>
+                                                <div class="col-sm-6 sideli login_logout"><a href="javascript:void(0);"
+                                                                                             target="_blank"><i
+                                                        class="fa fa-sign-out"></i> 退出登陆</a></div>
+                                            </div>
+                                        </div>
+                                        <footer>
+                                            <ul class="blogger_footer">
+                                                <li><strong>177</strong><span>文章</span></li>
+                                                <li><strong>6829</strong><span>评论</span></li>
+                                                <li><strong>33</strong><span>微语</span></li>
+                                            </ul>
+                                        </footer>
+                                    </div>
+                                </div>
+                            </ul>
+                        </div>
+                    </article>
+                </li>
+                <!--最新文章-->
+                <li class="widget widget_posts_list" data-aos="fade-up">
+                    <article class="panel-side">
+                        <header class="panel-header"><span class="icon"><i class="fa fa-line-chart"></i></span>
+                            <h3 class="widget-title">最新文章</h3></header>
+                        <ul class="sidebar-posts-list">
+                            <li>
+                                <a href="https://pjax.cn/FLY5_6.html" class="thumbnail-link" rel="bookmark"><img
+                                        src="https://pjax.cn/content/uploadfile/201907/f3cc1564427209.jpg"
+                                        class="thumbnailside" width="50" height="50" title="FLY5.6更新【重要！！！重要！！！重要！！！】"
+                                        alt="FLY5.6更新【重要！！！重要！！！重要！！！】"></a>
+                                <div class="right-box"><h4 class="side-title"><a href="https://pjax.cn/FLY5_6.html"
+                                                                                 data-toggle="tooltip"
+                                                                                 data-placement="bottom"
+                                                                                 title="FLY5.6更新【重要！！！重要！！！重要！！！】"
+                                                                                 rel="bookmark">FLY5.6更新【重要！！！重要！！！重要！！！】</a>
+                                </h4>
+                                    <ul class="side-meta">
+                                        <li class="date date-abb">
+                                            <span class="fa fa-clock-o"></span>
+                                            <a href="https://pjax.cn/FLY5_6.html" title="发布于2019-07-30">
+                                                <time pubdate="pubdate">2019-07-30</time>
+                                            </a>
+                                        </li>
+                                        <li class="views">
+                                            <span class="fa fa-eye"></span>
+                                            <a href="javascript:;" title="浏览了193次">193</a>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </li>
+                            <li>
+                                <a href="https://pjax.cn/post/10862" class="thumbnail-link" rel="bookmark"><img
+                                        src="https://pjax.cn/content/uploadfile/201907/032b1564059221.jpg"
+                                        class="thumbnailside" width="50" height="50" title="公布一个骗子QQ: 4068504"
+                                        alt="公布一个骗子QQ: 4068504"></a>
+                                <div class="right-box"><h4 class="side-title"><a href="https://pjax.cn/post/10862"
+                                                                                 data-toggle="tooltip"
+                                                                                 data-placement="bottom"
+                                                                                 title="公布一个骗子QQ: 4068504"
+                                                                                 rel="bookmark">公布一个骗子QQ: 4068504</a>
+                                </h4>
+                                    <ul class="side-meta">
+                                        <li class="date date-abb">
+                                            <span class="fa fa-clock-o"></span>
+                                            <a href="https://pjax.cn/post/10862" title="发布于2019-07-25">
+                                                <time pubdate="pubdate">2019-07-25</time>
+                                            </a>
+                                        </li>
+                                        <li class="views">
+                                            <span class="fa fa-eye"></span>
+                                            <a href="javascript:;" title="浏览了128次">128</a>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </li>
+                            <li>
+                                <a href="https://pjax.cn/post/33" class="thumbnail-link" rel="bookmark"><img
+                                        src="https://pjax.cn/content/uploadfile/201907/4a471562602076.png"
+                                        class="thumbnailside" width="50" height="50" title="Bty主题" alt="Bty主题"></a>
+                                <div class="right-box"><h4 class="side-title"><a href="https://pjax.cn/post/33"
+                                                                                 data-toggle="tooltip"
+                                                                                 data-placement="bottom" title="Bty主题"
+                                                                                 rel="bookmark">Bty主题</a></h4>
+                                    <ul class="side-meta">
+                                        <li class="date date-abb">
+                                            <span class="fa fa-clock-o"></span>
+                                            <a href="https://pjax.cn/post/33" title="发布于2019-07-08">
+                                                <time pubdate="pubdate">2019-07-08</time>
+                                            </a>
+                                        </li>
+                                        <li class="views">
+                                            <span class="fa fa-eye"></span>
+                                            <a href="javascript:;" title="浏览了662次">662</a>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </li>
+                            <li>
+                                <a href="https://pjax.cn/yizhifu.html" class="thumbnail-link" rel="bookmark"><img
+                                        src="https://pjax.cn/content/uploadfile/201907/4a471562264203.png"
+                                        class="thumbnailside" width="50" height="50" title="易支付授权" alt="易支付授权"></a>
+                                <div class="right-box"><h4 class="side-title"><a href="https://pjax.cn/yizhifu.html"
+                                                                                 data-toggle="tooltip"
+                                                                                 data-placement="bottom" title="易支付授权"
+                                                                                 rel="bookmark">易支付授权</a></h4>
+                                    <ul class="side-meta">
+                                        <li class="date date-abb">
+                                            <span class="fa fa-clock-o"></span>
+                                            <a href="https://pjax.cn/yizhifu.html" title="发布于2019-06-30">
+                                                <time pubdate="pubdate">2019-06-30</time>
+                                            </a>
+                                        </li>
+                                        <li class="views">
+                                            <span class="fa fa-eye"></span>
+                                            <a href="javascript:;" title="浏览了551次">551</a>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </li>
+                            <li>
+                                <a href="https://pjax.cn/yewu.html" class="thumbnail-link" rel="bookmark"><img
+                                        src="https://pjax.cn/content/uploadfile/201906/4a471561885395.png"
+                                        class="thumbnailside" width="50" height="50" title="虚拟业务（持续更新中）  ﻿"
+                                        alt="虚拟业务（持续更新中）  ﻿"></a>
+                                <div class="right-box"><h4 class="side-title"><a href="https://pjax.cn/yewu.html"
+                                                                                 data-toggle="tooltip"
+                                                                                 data-placement="bottom"
+                                                                                 title="虚拟业务（持续更新中）  ﻿" rel="bookmark">虚拟业务（持续更新中）
+                                    ﻿</a></h4>
+                                    <ul class="side-meta">
+                                        <li class="date date-abb">
+                                            <span class="fa fa-clock-o"></span>
+                                            <a href="https://pjax.cn/yewu.html" title="发布于2019-06-30">
+                                                <time pubdate="pubdate">2019-06-30</time>
+                                            </a>
+                                        </li>
+                                        <li class="views">
+                                            <span class="fa fa-eye"></span>
+                                            <a href="javascript:;" title="浏览了535次">535</a>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </li>
+                        </ul>
+                    </article>
+                </li>
+                <!--猜你喜欢-->
+                <li class="widget widget_posts_list" data-aos="fade-up">
+                    <article class="panel-side">
+                        <header class="panel-header"><span class="icon"><i class="fa fa-thumbs-o-up"></i></span>
+                            <h3 class="widget-title">猜你喜欢</h3></header>
+                        <ul class="sidebar-posts-list">
+                            <li><a href="https://pjax.cn/Windows7.html">Windows7 17/06月旗舰版</a></li>
+                            <li><a href="https://pjax.cn/Fly.html">[Fly]Emlog响应式全站Pjax主题</a></li>
+                            <li><a href="https://pjax.cn/hash.html">Hash(md5校验工具) v1.0.4 中文绿色版</a></li>
+                            <li><a href="https://pjax.cn/FLY-free.html">FLY主题1.4版本完全开源【免费发布】</a></li>
+                        </ul>
+                    </article>
+                </li>
+            </ul>
+        </aside>
+
+    </section>
+    <!--账号注册登陆-->
+    <div class="modal fade" id="myLogin" tabindex="-1">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="sign-login" id="login222">
+                    <div class="modal-header">
+                        <button class="close" data-dismiss="modal">&times;</button>
+                        <h3 class="sign-title">用户登陆</h3>
+                    </div>
+                    <div class="clearfix"></div>
+                    <div class="modal-body">
+                        <div class="container-fluid">
+                            <div class="row">
+                                <div class="col-sm-7 ajax_login_list1">
+                                    <form id="formtest" action="" method="post">
+                                        <div class="input-group input-login">
+                                            <span class="input-group-addon"><i class="fa fa-user faw"></i></span>
+                                            <input class="form-control lbtn" placeholder="请输入用户名" id="input1"
+                                                   name="user" type="text" value=""/>
+                                        </div>
+                                        <div class="input-group input-login">
+                                            <span class="input-group-addon"><i class="fa fa-lock faw"></i></span>
+                                            <input class="form-control lbtn" placeholder="请输入密码" id="input2" name="pw"
+                                                   type="password" value=""/>
+                                        </div>
+                                        <div class="input-group input-login">
+                                            <span class="input-group-addon"><i class="fa fa-file-code-o faw"></i></span>
+                                            <input class="form-control lbtn" placeholder="请填写验证码" id="imgcode"
+                                                   name="imgcode" type="text" value=""/>
+                                            <span class="ajax_reg_imgcode imgcode"><img src="/include/lib/checkcode.php"
+                                                                                        id="code"/></span>
+                                        </div>
+                                        <div class="checkbox">
+                                            <label>
+                                                <input type="checkbox" name="ispersis" id="ispersis"
+                                                       class="mgc mgc-info" value="1" title="7天免登陆"/> 记住密码
+                                            </label>
+                                            <span style="float:right">
+													<a href="javascript:;" class="wjmm">忘记密码?</a>
+												</span>
+                                            <div class="clearfix"></div>
+                                        </div>
+                                    </form>
+                                    <div id="contentdiv_a" style="text-align: center;"></div>
+                                    <div class="form-group">
+                                        <input type="submit" name="send_ajax" id="send_ajax" value="用户登陆"
+                                               class="btn ajax_reg_btn btn-block">
+                                    </div>
+                                </div>
+                                <div class="col-sm-5 ajax_login_list2">
+                                    <div class="form-group">
+                                        <p>还没有账号?</p>
+                                    </div>
+                                    <div class="form-group">
+                                        <input type="submit" id="zhuc" value="立即注册"
+                                               class="btn ajax_reg_btn btn-block ljzc">
+
+                                    </div>
+                                    <div class="form-group">
+                                        <p>您还可以使用其他方式登陆</p>
+                                    </div>
+                                    <div class="form-group input-login">
+                                        <span><a href="javascript:;" class="ajax_qq_login ajax_login_icon" title="QQ登陆"><span
+                                                class="fa fa-qq"></span></a></span>
+                                        <span><a href="javascript:;" class="ajax_login_code smdl" title="扫码登陆"><span
+                                                class="fa fa fa-qrcode"></span></a></span>
+                                    </div>
+                                    <div class="form-group">
+                                        <p>请珍惜本站账号,一经发现账号共享,取消VIP资格.</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!--账号注册-->
+                <div class="sign-reg" style="display:none" id="register">
+                    <div class="modal-header">
+                        <button class="close" data-dismiss="modal">&times;</button>
+                        <h3 class="sign-title">注册账号</h3>
+                    </div>
+                    <div class="clearfix"></div>
+                    <div class="modal-body">
+                        <div class="container-fluid">
+                            <div class="row">
+                                <div class="col-sm-7 ajax_login_list1">
+                                    <form id="refrom" action="" method="post">
+                                        <div class="input-group input-reg">
+                                            <span class="input-group-addon"><i class="fa fa-user faw"></i></span>
+                                            <input class="form-control rbtn" placeholder="请输入用户名" name="reusername"
+                                                   type="text" value=""/>
+                                        </div>
+                                        <div class="input-group input-reg">
+                                            <span class="input-group-addon"><i class="fa fa-envelope-o faw"></i></span>
+                                            <input class="form-control rbtn" placeholder="请输入邮箱" name="regemail"
+                                                   type="email" value=""/>
+                                        </div>
+                                        <div class="input-group input-reg">
+                                            <span class="input-group-addon"><i class="fa fa-lock faw"></i></span>
+                                            <input class="form-control rbtn" placeholder="请输入密码" name="repassword"
+                                                   type="password" value=""/>
+                                        </div>
+                                        <div class="input-group input-reg">
+                                            <span class="input-group-addon"><i class="fa fa-check faw"></i></span>
+                                            <input class="form-control rbtn" placeholder="请确认密码" name="repassword2"
+                                                   type="password" value=""/>
+                                        </div>
+                                        <div class="input-group input-reg">
+                                            <span class="input-group-addon"><i class="fa fa-file-code-o faw"></i></span>
+                                            <input class="form-control rbtn" placeholder="请输入验证码" id="reimgcode"
+                                                   name="reimgcode" type="text" value=""/>
+                                            <span class="ajax_reg_imgcode imgcode"><img src="/include/lib/checkcode.php"
+                                                                                        id="recode"/></span>
+                                        </div>
+                                        <div class="input-group input-reg">
+                                            <input type="text" class="form-control code" name="code"
+                                                   placeholder="邮箱验证码">
+                                            <span class="input-group-btn"><button class="btn btn-default send-code"
+                                                                                  type="button">发送验证码</button></span>
+                                        </div>
+                                    </form>
+                                    <div id="contentdiv_b" style="text-align: center;"></div>
+                                    <div class="form-group">
+                                        <input type="submit" name="re_ajax" id="re_ajax" value="立即注册"
+                                               class="ajax_reg_btn btn_go form-control"/>
+                                    </div>
+                                </div>
+                                <div class="col-sm-5 ajax_login_list2">
+                                    <div class="form-group">
+                                        <p>已有账号?</p>
+                                    </div>
+                                    <div class="form-group">
+                                        <input type="submit" id="lijidenglu" value="立即登陆"
+                                               class="btn ajax_reg_btn btn-block ljdl">
+
+                                    </div>
+                                    <div class="form-group">
+                                        <p>您还可以使用其他方式登陆</p>
+                                    </div>
+                                    <div class="form-group input-login">
+                                        <span><a href="javascript:;" class="ajax_qq_login ajax_login_icon" title="QQ登陆"><span
+                                                class="fa fa-qq"></span></a></span>
+                                        <span><a href="javascript:;" class="ajax_login_code smdl" title="扫码登陆"><span
+                                                class="fa fa fa-qrcode"></span></a></span>
+                                    </div>
+                                    <div class="form-group">
+                                        <p>请珍惜本站账号,一经发现账号共享,取消VIP资格.</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="sign-zhaohui" style="display:none">
+                    <div class="modal-header">
+                        <button class="close" data-dismiss="modal">&times;</button>
+                        <h3 class="sign-title">密码找回</h3>
+                    </div>
+                    <div class="clearfix"></div>
+                    <div class="modal-body">
+                        <div class="row">
+                            <div class="col-sm-7 ajax_login_list1">
+                                <div class="container-fluid">
+                                    <form id="mmzh" action="" method="post">
+                                        <div class="input-group input-email">
+                                            <span class="input-group-addon"><i class="fa fa-retweet faw"></i></span>
+                                            <input class="form-control lbtn" placeholder="请输入邮箱" id="reemail"
+                                                   name="email" type="email" value=""/>
+                                        </div>
+                                    </form>
+                                    <div id="contentdiv_t" style="text-align: center;"></div>
+                                    <div class="form-group ajax_btn-reg">
+                                        <span><input type="submit" name="pwre_ajax" id="pwre_ajax" value="找回密码"
+                                                     class="btn ajax_reg_btn btn-block"/></span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-sm-5 ajax_login_list2">
+                                <div class="form-group">
+                                    <p>密码已找回?</p>
+                                </div>
+                                <div class="form-group">
+                                    <input type="submit" value="立即登陆" class="btn ajax_reg_btn btn-block ljdl">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="sign-saomiao" style="display:none">
+                    <div class="saomiao-close">扫描登陆<a href="javascript:;" class="closea" title="关闭"></a></div>
+                    <div id="picdiv" style="margin:-15px"></div>
+                    <div id="contentdiv_c" style="text-align:center;color:red"></div>
+                    <div class="clearfix"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="clearfloat"></div>
+    <div id="f-mobile-footer">
+        <ul id="f-mobile-menu">
+            <li><a href="https://pjax.cn/"> <span class="fa fa-home"></span> 首页 </a></li>
+            <li><a href="https://pjax.cn/t"> <span class="fa fa-twitch"></span> 微语 </a></li>
+            <li><a href="javascript:;" class="fly-search-s"> <span class="fa fa-search"></span> 搜索 </a></li>
+            <li><a href="https://pjax.cn/about"> <span class="fa fa-info"></span> 关于 </a></li>
+            <li id="mobile-login"><a href="#" class="expand" data-target="#myLogin" data-toggle="modal"
+                                     data-backdrop="static" target="_blank"> <span class="fa fa-user"></span> 用户 </a>
+            </li>
+        </ul>
+    </div>
+</div>
+<footer class="footer">
+    <div class="container copy-right">
+        <div class="footer-tag-list">
+		        <span>Copyright © 2017 <a href="https://pjax.cn/">Finally</a>
+        <a href="http://www.miibeian.gov.cn" target="_blank">湘ICP备14019254号</a> </span>
+            <span>Powered by <a href="http://www.emlog.net" target="_blank">Emlog</a> · Theme by <a
+                    href="http://pjax.cn" target="_blank">Finally</a></span>
+        </div>
+    </div>
+</footer>
+<div class="loading">
+    <div class="loading1">
+        <div class="block"></div>
+        <div class="block"></div>
+        <div class="block"></div>
+        <div class="block"></div>
+        <div class='section-left'></div>
+        <div class='section-right'></div>
+    </div>
+</div>
+<div class="rollbar">
+    <ul>
+        <li class="conment-btn"></li>
+        <li><a href="javascript:(scrollTo());"><i class="fa fa-chevron-up"></i></a><h6>去顶部<i></i></h6></li>
+    </ul>
+</div>
+<!--热搜-->
+<div class="search-forms">
+    <form method="get" action="https://pjax.cn/">
+        <div class="search-form-inner">
+            <div class="search-form-box">
+                <input class="form-search" type="text" name="keyword" placeholder="键入搜索关键词">
+                <button type="submit" id="btn-search" class="search-go"><i class="fa fa-search"></i></button>
+
+            </div>
+            <div class="search-commend">
+                <h4>大家都在搜</h4>
+                <ul>
+                    <li class="search-go"><a href="https://pjax.cn/tag/Radmin">Radmin</a></li>
+                </ul>
+            </div>
+        </div>
+    </form>
+    <div class="close-search">
+        <span class="close-top"></span>
+        <span class="close-bottom"></span>
+    </div>
+</div>
+<script type="text/javascript" src="js/jquery.swipebox.js"></script>
+<script type="text/javascript" src="js/sweetalert.min.js"></script>
+<script type="text/javascript" src="js/masonry.min.js"></script>
+<script type="text/javascript" src="js/main.js"></script>
+<script src="js/vuejs-2.5.16.js"></script>
+<script src="Editor/js/jquery.min.js"></script>
+<script src="Editor/js/editormd.min.js"></script>
+<script src="Editor/lib/marked.min.js"></script>
+<script src="Editor/lib/prettify.min.js"></script>
+<script src="js/axios-0.18.0.js"></script>
+<!-- jQuery (Bootstrap 的所有 JavaScript 插件都依赖 jQuery，所以必须放在前边) -->
+<script src="https://cdn.jsdelivr.net/npm/jquery@1.12.4/dist/jquery.min.js"></script>
+<!-- 加载 Bootstrap 的所有 JavaScript 插件。你也可以根据需要只加载单个插件。 -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@3.3.7/dist/js/bootstrap.min.js"></script>
+<!--登陆注册切换函数-->
+<script>
+    $('#zhuc').click(function () {
+        $('#register').css("display", "block")
+        $('#login222').css("display", "none")
+
+    });
+    $('#lijidenglu').click(function () {
+        $('#register').css("display", "none")
+        $('#login222').css("display", "block")
+    })
+</script>
+<link rel="stylesheet" type="text/css" href="css/aos.css"/>
+<script type="text/javascript">
+    AOS.init({
+        offset: 200,
+        duration: 500,
+        easing: 'ease-in-sine',
+        delay: 100,
+        once: true,
+    });
+</script>
+
+<script>
+    new Vue({
+        el: '#content',
+        data:{
+            article:{}
+        },
+        methods:{
+          findById:function () {
+              var _this = this;
+              var url = 'list/findById/djsalkfjasdf';
+              axios.get(url).then(function (values) {
+                  _this.article = values.data;
+              })
+          }
+        },
+        created:function () {
+            this.findById();
+        },
+        //数据更新后将markdown源码转成html
+        updated:function () {
+            editormd.markdownToHTML("content22",{emoji:true});
+
+        }
+    })
+</script>
+</body>
+</html>
+

@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="cn-ZH">
+<head>
+    <meta charset="UTF-8">
+    <title>markdown</title>
+    <link rel="stylesheet" href="Editor/css/style.css" />
+    <link rel="stylesheet" href="Editor/css/editormd.css" />
+</head>
+<body>
+<!-- Editor容器... -->
+<div id="test-editormd">
+    <textarea id="content" name="content" style="display:none;"></textarea>
+</div>
+<div>
+    <button onclick="fun()">保存</button>
+</div>
+<script src="Editor/js/jquery.min.js"></script>
+<script src="Editor/js/editormd.min.js"></script>
+<script type="text/javascript">
+    var testEditor;
+    $(function() {
+        testEditor = editormd("test-editormd", {
+            width   : "98%",
+            height  : 300,
+            syncScrolling : "single",
+            path    : "Editor/lib/", //依赖lib文件夹路径
+            emoji : true,
+            taskList : true,
+            tocm     : true,
+            imageUpload: true,
+            imageFormats: ["jpg", "jpeg", "gif", "png", "bmp", "webp"],
+            imageUploadURL: "imageUpload",		//上传图片控制器Mapping
+            saveHTMLToTextarea : true
+        });
+    });
+    function fun() {
+        alert(testEditor.getMarkdown())
+    }
+</script>
+</body>
+</html>
